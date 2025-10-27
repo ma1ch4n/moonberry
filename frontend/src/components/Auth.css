@@ -1,0 +1,248 @@
+/* Auth.css - Updated with Landing Page Style and Moon Berry Branding */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: backgroundAnimation 15s infinite alternate;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes backgroundAnimation {
+  0% { background-color: #ff6b6b; }
+  25% { background-color: #ff8e8e; }
+  50% { background-color: #ffffff; }
+  75% { background-color: #ffd6d6; }
+  100% { background-color: #ff6b6b; }
+}
+
+/* Moon Berry logo in top left */
+.moon-berry-logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff6b6b;
+  text-shadow: 2px 2px 0px #ffd6d6;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.moon-berry-logo span {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Form styling - updated to match landing page */
+.auth-form {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  border: 2px solid #ffd6d6;
+}
+
+.logo-container {
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ff6b6b;
+  margin: 0 0 10px 0;
+  text-shadow: 3px 3px 0px #ffd6d6;
+  letter-spacing: 2px;
+}
+
+.logo-o {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+.logo-subtitle {
+  color: #ff8e8e;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  color: #ff6b6b;
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+}
+
+.form-header p {
+  color: #ff8e8e;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ff6b6b;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ffd6d6;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  background-color: #fffafa;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff9a9e;
+  box-shadow: 0 0 0 3px rgba(255, 154, 158, 0.3);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.login-btn:hover:not(:disabled) {
+  background: linear-gradient(to right, #ff5252, #ff7b7b);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+}
+
+.login-btn:disabled {
+  background: linear-gradient(to right, #ffb7b7, #ffd6d6);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.error-message {
+  background-color: #ffe8e8;
+  color: #ff6b6b;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-left: 4px solid #ff6b6b;
+  font-weight: 500;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 30px;
+  color: #ff8e8e;
+  font-size: 1.1rem;
+}
+
+.auth-link a {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+  color: #ff5252;
+}
+
+/* Floating elements in the background */
+.auth-container::before,
+.auth-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,154,158,0.3) 0%, rgba(255,214,214,0.1) 100%);
+  z-index: 0;
+}
+
+.auth-container::before {
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  left: 10%;
+  animation: floatBackground 20s ease-in-out infinite;
+}
+
+.auth-container::after {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  right: 10%;
+  animation: floatBackground 15s ease-in-out infinite reverse;
+}
+
+@keyframes floatBackground {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(20px, 20px); }
+  50% { transform: translate(0, 40px); }
+  75% { transform: translate(-20px, 20px); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .auth-form {
+    padding: 25px;
+    max-width: 90%;
+  }
+  
+  .moon-berry-logo {
+    left: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 1rem;
+  }
+  
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-header p {
+    font-size: 1rem;
+  }
+}

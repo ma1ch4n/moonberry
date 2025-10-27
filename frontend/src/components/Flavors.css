@@ -1,0 +1,331 @@
+.flavors-management {
+  padding: 20px;
+  background-color: #fff5f5;
+  min-height: calc(100vh - 80px);
+}
+
+.flavors-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.flavors-header h2 {
+  color: #d81b60;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.header-controls {
+  display: flex;
+  gap: 10px;
+}
+
+/* Circular Progress Bar Styles */
+.circular-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #fffafa;
+  border-radius: 12px;
+  border: 1px solid #ffe6ee;
+}
+
+.circular-progress {
+  transform: rotate(0deg);
+}
+
+.circular-progress-bg {
+  transition: stroke 0.3s ease;
+}
+
+.circular-progress-fill {
+  transition: all 0.3s ease;
+  animation: progress-fill 1s ease-out;
+}
+
+@keyframes progress-fill {
+  from {
+    stroke-dashoffset: 251.2;
+  }
+}
+
+.circular-progress-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.current-jars {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d81b60;
+}
+
+.max-jars {
+  font-size: 12px;
+  color: #f48fb1;
+}
+
+/* Stock Summary Dashboard */
+.stock-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(216, 27, 96, 0.1);
+  border: 1px solid #ffe6ee;
+}
+
+.stock-summary-item {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.stock-summary-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(216, 27, 96, 0.2);
+}
+
+.stock-summary-item.stock-high {
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border-color: #c3e6cb;
+}
+
+.stock-summary-item.stock-moderate {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border-color: #ffeaa7;
+}
+
+.stock-summary-item.stock-low {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  border-color: #fdcb6e;
+}
+
+.stock-summary-item.stock-critical {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  border-color: #f5c6cb;
+}
+
+.stock-summary-item.stock-total {
+  background: linear-gradient(135deg, #e2e3e5 0%, #d6d8db 100%);
+  border-color: #d6d8db;
+}
+
+.stock-count {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.stock-high .stock-count { color: #2e7d32; }
+.stock-moderate .stock-count { color: #856404; }
+.stock-low .stock-count { color: #fd7e14; }
+.stock-critical .stock-count { color: #dc3545; }
+.stock-total .stock-count { color: #495057; }
+
+.stock-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.stock-high .stock-label { color: #2e7d32; }
+.stock-moderate .stock-label { color: #856404; }
+.stock-low .stock-label { color: #fd7e14; }
+.stock-critical .stock-label { color: #dc3545; }
+.stock-total .stock-label { color: #495057; }
+
+/* Rest of the CSS remains similar to Ingredients.css but with flavor-specific styling */
+.flavors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.flavor-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(216, 27, 96, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #ffe6ee;
+}
+
+.flavor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(216, 27, 96, 0.15);
+}
+
+.flavor-header-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe6ee 100%);
+  border-bottom: 1px solid #ffe6ee;
+}
+
+.flavor-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8bbd0 0%, #d81b60 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px rgba(216, 27, 96, 0.2);
+}
+
+.flavor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.flavor-card:hover .flavor-image img {
+  transform: scale(1.1);
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f8bbd0 0%, #d81b60 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.flavor-title {
+  flex: 1;
+}
+
+.flavor-title h3 {
+  margin: 0 0 8px 0;
+  color: #d81b60;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Category Badges for Flavors */
+.category-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.category-coffee_flavors {
+  background-color: #d7ccc8;
+  color: #4e342e;
+  border: 1px solid #bcaaa4;
+}
+
+.category-fruit_flavors {
+  background-color: #fce4ec;
+  color: #d81b60;
+  border: 1px solid #f8bbd0;
+}
+
+.category-juice_flavors {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.category-classic_flavors {
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border: 1px solid #ffcc80;
+}
+
+.category-specialty_flavors {
+  background-color: #f3e5f5;
+  color: #8e24aa;
+  border: 1px solid #e1bee7;
+}
+
+.category-seasonal_flavors {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #90caf9;
+}
+
+.flavor-info {
+  padding: 20px;
+}
+
+.flavor-description {
+  font-style: italic;
+  color: #880e4f;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.flavor-stock-section {
+  margin: 15px 0;
+}
+
+.flavor-details p {
+  margin: 0 0 10px 0;
+  color: #880e4f;
+  font-size: 14px;
+}
+
+.flavor-details strong {
+  color: #d81b60;
+}
+
+/* Add the rest of the CSS styles similar to Ingredients.css */
+/* (Filters, Form styles, Buttons, etc. remain the same structure) */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flavors-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .stock-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .flavors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .flavor-header-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .flavor-image {
+    align-self: center;
+  }
+  
+  .circular-progress-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
