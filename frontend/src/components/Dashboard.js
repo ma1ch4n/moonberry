@@ -80,6 +80,18 @@ const Dashboard = () => {
     fetchDashboardData();
   };
 
+  // Logout function - redirects to landing page
+  const handleLogout = () => {
+    // Clear all authentication data
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('rememberMe');
+    sessionStorage.clear();
+    
+    // Redirect to landing page
+    navigate('/');
+  };
+
   // Generate PDF Report with Charts and Enhanced Design
   const generatePDFReport = async () => {
     try {
@@ -445,14 +457,6 @@ const Dashboard = () => {
     } finally {
       setGeneratingReport(false);
     }
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    localStorage.removeItem('rememberMe');
-    sessionStorage.clear();
-    navigate('/login');
   };
 
   const COLORS = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFE66D', '#FF9F1C', '#A358DF', '#96CEB4', '#FFEAA7'];
